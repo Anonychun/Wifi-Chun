@@ -13,7 +13,7 @@ Library to penetration testing on WiFi. This library only tested on Linux
 
 ## Installing
 ```bash
-git clone git@github.com:Anonychun/WifiChun.git
+git clone git@github.com:Anonychun/Wifi-Chun.git
 cd wifichun
 make
 sudo make install
