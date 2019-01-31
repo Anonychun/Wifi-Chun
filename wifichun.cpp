@@ -17,6 +17,8 @@
 #include <iostream>
 #include <fstream>
 
+// https://github.com/Anonychun
+
 using namespace std;
 
 // prototipe, deklarasi fungsi
