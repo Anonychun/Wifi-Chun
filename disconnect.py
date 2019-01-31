@@ -16,6 +16,8 @@
 
 import os
 
+# https://github.com/Anonychun
+
 # memilih interface
 os.system('iwconfig')
 print("1. wlan0")
