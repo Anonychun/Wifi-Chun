@@ -16,6 +16,8 @@
 
 import os
 
+# https://github.com/Anonychun
+
 os.system('iwconfig')
 print("1. wlan0")
 print("2. wlp2s0")
