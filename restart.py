@@ -16,6 +16,8 @@
 
 import os
 
+# https://github.com/Anonychun
+
 os.system('sudo ifconfig mon0 down')
 # merestart konfigurasi network
 os.system('sudo systemctl stop network-manager')
