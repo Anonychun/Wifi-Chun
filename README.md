@@ -30,7 +30,7 @@ sudo wifichun
 ```
 
 ## Authors
-* **Achmad Chun-Chun Winata Adi** - *Initial Works* - [Facebook](https://facebook.com/Anonychun) [Instagram](https://instagram.com/Anonychun) [Telegram](https://t.me/Anonychun) [GitHub](https://github.com/Anonychun)
+* **Achmad Chun-Chun Winata Adi** - *Initial Work* - [Facebook](https://facebook.com/Anonychun) [Instagram](https://instagram.com/Anonychun) [Telegram](https://t.me/Anonychun) [GitHub](https://github.com/Anonychun)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
