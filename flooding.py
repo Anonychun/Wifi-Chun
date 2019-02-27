@@ -16,24 +16,14 @@
 
 import os
 
-# https://github.com/Anonychun
+os.system("iwconfig")
+wlan = input("[+] Select an interface? : ")
+os.system("clear")
 
-os.system('iwconfig')
-print("1. wlan0")
-print("2. wlp2s0")
-wlan = int(input("\nPilih interface WiFi [1/2]? : "))
+print("[+] Process of creating WiFi / SSID . . .\n")
 
-print("Sedang Melakukan Proses Membuat WiFi / SSID . . .\n")
-
-if wlan == 1:
-	# proses membuat adapter type monitor
-	os.system('sudo iw wlan0 interface add mon0 type monitor')
-	# proses disconnect WiFi
-	os.system('sudo mdk3 mon0 b -f ssid.txt')
-	os.system('clear')
-if wlan == 2:
-	# proses membuat adapter type monitor
-	os.system('sudo iw wlp2s0 interface add mon0 type monitor')
-	# proses disconnect WiFi
-	os.system('sudo mdk3 mon0 b -f ssid.txt')
-	os.system('clear')
+# making an adapter type monitor
+os.system("sudo iw {} interface add mon0 type monitor".format(wlan))
+# flooding WiFi
+os.system("sudo mdk3 mon0 b -f ssid.txt")
+os.system("clear")
