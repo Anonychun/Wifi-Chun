@@ -3,8 +3,6 @@
 Library to penetration testing on WiFi. This library only tested on Linux
 
 ## Features
-- Update and upgrade repository synaptic package `apt`
-- Installing `MDK3` and `Aircrack-ng` from synaptic pakcage repository.
 - Deauthentication / Disassociation Amok Mode.
 - Kicks everybody found from `AP` (acces point)
 - Beacon `Flood Mode`
