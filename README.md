@@ -11,6 +11,13 @@ Library to penetration testing on WiFi. This library only tested on Linux
 - Sends beacon frames to show `fake APs` at clients.
 - restart the network with systemctl.
 
+## Require
+```bash
+g++
+net-tools
+mdk3
+```
+
 ## Installing
 ```bash
 make
